@@ -1,0 +1,19 @@
+{
+  "name": "litecanvas-app",
+  "version": "1.0.0",
+  "description": "Basic template for litecanvas games",
+  "type": "module",
+  "scripts": {
+    "start": "esbuild src/index.js --bundle --watch --outfile=public/app.js --servedir=public",
+    "build": "esbuild src/index.js --bundle --minify --outfile=public/app.js",
+    "prepare": "npm run build"
+  },
+  "author": "Luiz Bills <luizbills@pm.me>",
+  "license": "MIT",
+  "devDependencies": {
+    "esbuild": "^0.20.1"
+  },
+  "dependencies": {
+    "@litecanvas/litecanvas": "^0.2.0"
+  }
+}
