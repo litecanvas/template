@@ -13,7 +13,7 @@ function init() {
 function update() {
   // update your things
   // example: tap to change the position
-  if (TAPPING) {
+  if (TAPPED) {
     x = TAPX
     y = TAPY
   }
