@@ -22,5 +22,5 @@ function update() {
 function draw() {
   // render your things
   clear(0) // clear the screen
-  circfill(x, y, 50, 8) // draw a circle
+  circfill(x, y, lerp(0, 50, ELAPSED / 2), 8) // draw a circle
 }
