@@ -1,5 +1,7 @@
 import litecanvas from "@litecanvas/litecanvas"
 
+let x, y
+
 litecanvas({
   loop: { init, update, draw },
 })
