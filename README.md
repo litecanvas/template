@@ -1,4 +1,4 @@
-# LITECANVAS TEMPLATE
+# Basic template for litecanvas games
 
 Basic template for [litecanvas](https://github.com/litecanvas/game-engine) games.
 
