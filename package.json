@@ -6,7 +6,8 @@
   "scripts": {
     "start": "esbuild src/index.js --bundle --watch --outfile=public/app.js --servedir=public",
     "build": "esbuild src/index.js --bundle --minify --outfile=public/app.js",
-    "prepare": "npm run build"
+    "prepare": "npm run build",
+    "format": "npx prettier -w src"
   },
   "author": "Luiz Bills <luizbills@pm.me>",
   "license": "MIT",
@@ -14,6 +15,6 @@
     "esbuild": "^0.20.1"
   },
   "dependencies": {
-    "@litecanvas/litecanvas": "^0.2.0"
+    "@litecanvas/litecanvas": "*"
   }
 }

@@ -6,23 +6,25 @@ litecanvas({
   loop: { init, update, draw },
 })
 
+// initialize your game
 function init() {
-  // initialize globals
   x = CENTERX
   y = CENTERY
+  bg = 0 // background color
+  fg = 5 // circle color
 }
 
+// update your game
 function update() {
-  // update your things
-  // example: tap to change the position
+  // use TAPPED to detect taps/clicks
   if (TAPPED) {
     x = TAPX
     y = TAPY
   }
 }
 
+// render your game
 function draw() {
-  // render your things
-  clear(0) // clear the screen
-  circfill(x, y, lerp(0, 50, ELAPSED / 2), 8) // draw a circle
+  cls(bg) // clear the screen
+  circfill(x, y, lerp(0, 50, ELAPSED / 2), fg) // draw a circle
 }
