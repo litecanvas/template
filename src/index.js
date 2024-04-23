@@ -1,6 +1,6 @@
 import litecanvas from "@litecanvas/litecanvas"
 
-let x, y
+let x, y, fg, bg
 
 litecanvas({
   loop: { init, update, draw },
