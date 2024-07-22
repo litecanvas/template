@@ -1,4 +1,4 @@
-import litecanvas from "@litecanvas/litecanvas"
+import litecanvas from "litecanvas"
 
 let x, y, fg, bg
 
