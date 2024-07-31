@@ -3,7 +3,7 @@ import litecanvas from "litecanvas"
 let x, y, fg, bg
 
 litecanvas({
-  loop: { init, update, draw },
+  loop: { init, update, draw, tapped },
 })
 
 // initialize your game
@@ -21,17 +21,16 @@ function init() {
   fg = 5
 }
 
-// update your game
-function update() {
-  // use TAPPED and TAPPING to detect taps/clicks
-  if (TAPPED || TAPPING) {
-    // use the tap/click to change the x y variables
-    x = TAPX
-    y = TAPY
-  }
+// handle mouse/touch interactions
+function tapped(x, y, tapId) {
+  x = TAPX
+  y = TAPY
 }
 
-// render your game
+// update your game logic
+function update() {}
+
+// render your game scene
 function draw() {
   // clear the screen
   cls(bg)
