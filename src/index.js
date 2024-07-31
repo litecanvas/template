@@ -22,9 +22,9 @@ function init() {
 }
 
 // handle mouse/touch interactions
-function tapped(x, y, tapId) {
-  x = TAPX
-  y = TAPY
+function tapped(tapx, tapy, tapId) {
+  x = tapx
+  y = tapy
 }
 
 // update your game logic
