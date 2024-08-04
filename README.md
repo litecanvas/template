@@ -9,5 +9,5 @@ Basic template for [litecanvas](https://github.com/litecanvas/game-engine) games
 npx tiged litecanvas/template my-game
 cd my-game
 npm install
-npm start
+npm run dev
 ```
