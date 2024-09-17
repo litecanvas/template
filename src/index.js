@@ -27,7 +27,7 @@ function init() {
   camera = new Camera()
 
   // zoom 5 times to make the graphics bigger
-  camera.zoom(5)
+  camera.zoomTo(5)
 }
 
 // handle mouse/touch interactions
