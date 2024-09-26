@@ -5,7 +5,7 @@ import { Actor, vec, Camera, ANCHOR_CENTER } from "@litecanvas/utils"
 
 let actor, sprites, camera
 
-litecanvas({
+let engine = litecanvas({
   pixelart: true,
   loop: { init, update, draw, tapped },
 })
@@ -24,7 +24,7 @@ function init() {
 
   // setup the game camera
   // see: https://github.com/litecanvas/utils/tree/main/src/camera#readme
-  camera = new Camera()
+  camera = new Camera(engine)
 
   // zoom 5 times to make the graphics bigger
   camera.zoomTo(5)
