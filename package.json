@@ -9,7 +9,6 @@
     "prepare": "npm run build",
     "format": "prettier -w src"
   },
-  "author": "Luiz Bills <luizbills@pm.me>",
   "license": "MIT",
   "devDependencies": {
     "esbuild": "^0.20.1",
