@@ -28,6 +28,19 @@ async function init() {
 
   // zoom 5 times to make the graphics bigger
   camera.zoomTo(5)
+
+  // delete this to not show the FPS meter
+  loadScript(
+    "https://cdn.jsdelivr.net/npm/stats-js@1.0.1/build/stats.min.js",
+    () => {
+      let stats = new Stats()
+      stats.dom.style.right = 0
+      stats.dom.style.left = null
+      document.body.appendChild(stats.dom)
+      listen("before:update", () => stats.begin())
+      listen("after:draw", () => stats.end())
+    },
+  )
 }
 
 // handle mouse/touch interactions
