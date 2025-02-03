@@ -1,9 +1,9 @@
 import litecanvas from "litecanvas"
 import "./on-error.js"
-import pluginAssetLoader from "@litecanvas/plugin-asset-loader"
+import { pluginAssetLoader } from "@litecanvas/plugin-asset-loader"
 import { Actor, vec, Camera, ANCHOR_CENTER } from "@litecanvas/utils"
 
-let actor, sprites, camera
+let player, camera
 
 let engine = litecanvas({
   pixelart: true,
@@ -14,13 +14,13 @@ let engine = litecanvas({
 use(pluginAssetLoader)
 
 // initialize your game
-function init() {
-  sprites = {}
-
+async function init() {
   // load a sprite located in the "public" folder
-  loadImage("images/mage.png", (result) => {
-    sprites[result.id] = result
-  })
+  // see: https://github.com/litecanvas/plugin-asset-loader?tab=readme-ov-file#loading-images
+  const sprite = await loadImage("images/mage.png")
+
+  // create a player with the loaded sprite
+  player = new Actor(sprite, vec(CENTERX, CENTERY), ANCHOR_CENTER)
 
   // setup the game camera
   // see: https://github.com/litecanvas/utils/tree/main/src/camera#readme
@@ -36,19 +36,16 @@ function tapped(tapx, tapy, tapId) {
 
   // fix the tap X and Y based on the camera transformations
   // only necessary theif the camera move, zoom or rotate
-  actor.pos = camera.getWorldPoint(tapx, tapy, actor.pos)
+  player.pos = camera.getWorldPoint(tapx, tapy, player.pos)
 }
 
 // update your game logic
 function update(dt) {
   if (LOADING) return
 
-  if (!actor) {
-    // create a game object
-    // see: https://github.com/litecanvas/utils/tree/main/src/actor#readme
-    actor = new Actor(sprites.mage, vec(CENTERX, CENTERY))
-    actor.anchor = ANCHOR_CENTER
-  }
+  // simple movement with arrows
+  player.x += 100 * dt * (iskeydown("arrowRight") - iskeydown("arrowLeft"))
+  player.y += 100 * dt * (iskeydown("arrowDown") - iskeydown("arrowUp"))
 }
 
 // render your game scene
@@ -62,17 +59,17 @@ function draw() {
 
   camera.start()
 
-  actor.draw() // draw our game object
+  player.draw() // draw our game object
 
-  // display a text
+  // display the "hello" message
   textalign("center", "middle")
   textsize(6)
-  text(actor.x, actor.y - 16, "Hello!")
+  text(player.x, player.y - 16, "Hello!")
 
   camera.end()
 
-  // anything drawn outside of camera#start and camera#end stay fixed
+  // anything drawn outside of camera#start and camera#end will stay fixed
   // like game UI (score, lifes, buttons, etc)
   textsize(20)
-  text(10, 10, "Tap to change the mage position")
+  text(10, 10, "Tap to change the mage position or press arrow keys")
 }
