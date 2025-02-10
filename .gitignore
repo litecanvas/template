@@ -1,3 +1,8 @@
+# ignore NPM packages
 node_modules
+
+# ignore the build.js
 public/build.js
-package-lock.json
+
+# ignore package-lock.json, pnpm-lock.yaml, bun.lock, etc
+/*lock*
