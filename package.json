@@ -15,8 +15,8 @@
     "prettier": "^3.3.3"
   },
   "dependencies": {
-    "@litecanvas/plugin-asset-loader": "*",
-    "@litecanvas/utils": "*",
-    "litecanvas": "*"
+    "@litecanvas/plugin-asset-loader": "latest",
+    "@litecanvas/utils": "latest",
+    "litecanvas": "latest"
   }
 }

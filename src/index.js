@@ -1,5 +1,6 @@
-import litecanvas from "litecanvas"
 import "./on-error.js"
+
+import litecanvas from "litecanvas"
 import { pluginAssetLoader } from "@litecanvas/plugin-asset-loader"
 import { Actor, vec, Camera, ANCHOR_CENTER } from "@litecanvas/utils"
 
