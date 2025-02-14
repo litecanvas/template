@@ -4,15 +4,15 @@
   "description": "Basic template for litecanvas games",
   "type": "module",
   "scripts": {
-    "dev": "esbuild src/index.js --bundle --watch --outfile=public/build.js --servedir=public",
-    "build": "esbuild src/index.js --bundle --minify --outfile=public/build.js",
+    "dev": "esbuild src/index.js --bundle --watch --define:DEV_BUILD=true --outfile=public/build.js --servedir=public",
+    "build": "esbuild src/index.js --bundle --minify --define:DEV_BUILD=false --outfile=public/build.js",
     "prepare": "npm run build",
     "format": "prettier -w src"
   },
   "license": "MIT",
   "devDependencies": {
     "esbuild": "^0.25.0",
-    "prettier": "^3.3.3"
+    "prettier": "^3.5.1"
   },
   "dependencies": {
     "@litecanvas/plugin-asset-loader": "latest",
