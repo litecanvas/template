@@ -7,6 +7,8 @@ import { Actor, vec, Camera, ANCHOR_CENTER } from "@litecanvas/utils"
 let player, camera
 
 let engine = litecanvas({
+  width: 960,
+  height: 720,
   pixelart: true,
   loop: { init, update, draw, tapped },
 })
