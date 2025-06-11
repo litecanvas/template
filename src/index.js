@@ -40,7 +40,9 @@ async function init() {
       stats.dom.style.right = 0
       stats.dom.style.left = null
       document.body.appendChild(stats.dom)
-      listen("before:update", () => stats.begin())
+      listen("before:update", (_, i = 1) => {
+        if (i === 1) stats.begin()
+      })
       listen("after:draw", () => stats.end())
     },
   )
