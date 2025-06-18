@@ -1,5 +1,7 @@
 # Basic template for litecanvas games
 
+[![powered by esbuild](https://flat.badgen.net/static/bundler/esbuild/blue)]([https://litecanvas.js.org/](https://esbuild.github.io/))
+
 Basic template for [litecanvas](https://github.com/litecanvas/game-engine) games.
 
 ## Usage
