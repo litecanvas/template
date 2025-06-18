@@ -1,10 +1,14 @@
-import "./on-error.js"
+import { onError } from "./on-error.js"
 
 import litecanvas from "litecanvas"
+import pluginFrameRateMeter from "@litecanvas/plugin-frame-rate-meter"
 import { pluginAssetLoader } from "@litecanvas/plugin-asset-loader"
 import { Actor, vec, Camera, ANCHOR_CENTER } from "@litecanvas/utils"
 
-let player, camera
+// delete this to not show the errors in a popup
+DEV: onError((message) => {
+  alert(`${message}. Open the browser console for more details.`)
+})
 
 let engine = litecanvas({
   width: 960,
@@ -13,11 +17,16 @@ let engine = litecanvas({
   loop: { init, update, draw, tapped },
 })
 
-// add the Asset Loader plugin
-use(pluginAssetLoader)
+let player, camera
 
 // initialize your game
 async function init() {
+  // delete this to not show the FPS meter
+  DEV: use(pluginFrameRateMeter)
+
+  // add the asset loader plugin
+  use(pluginAssetLoader)
+
   // load a sprite located in the "public" folder
   // see: https://github.com/litecanvas/plugin-asset-loader?tab=readme-ov-file#loading-images
   const sprite = await loadImage("images/mage.png")
@@ -31,21 +40,6 @@ async function init() {
 
   // zoom 5 times to make the graphics bigger
   camera.zoomTo(5)
-
-  // delete this to not show the FPS meter
-  loadScript(
-    "https://cdn.jsdelivr.net/npm/stats-js@1.0.1/build/stats.min.js",
-    () => {
-      let stats = new Stats()
-      stats.dom.style.right = 0
-      stats.dom.style.left = null
-      document.body.appendChild(stats.dom)
-      listen("before:update", (_, i = 1) => {
-        if (i === 1) stats.begin()
-      })
-      listen("after:draw", () => stats.end())
-    },
-  )
 }
 
 // handle mouse/touch interactions

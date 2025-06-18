@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@litecanvas/plugin-asset-loader": "latest",
+    "@litecanvas/plugin-frame-rate-meter": "latest",
     "@litecanvas/utils": "latest",
     "litecanvas": "latest"
   }
