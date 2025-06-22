@@ -32,7 +32,7 @@ async function init() {
   const sprite = await loadImage("images/mage.png")
 
   // create a player with the loaded sprite
-  player = new Actor(sprite, vec(CX, CY), ANCHOR_CENTER)
+  player = new Actor(sprite, vec(W / 2, H / 2), ANCHOR_CENTER)
 
   // setup the game camera
   // see: https://github.com/litecanvas/utils/tree/main/src/camera#readme
