@@ -1,6 +1,5 @@
-import { onError } from "./on-error.js"
-
 import litecanvas from "litecanvas"
+import { onError } from "./on-error.js"
 import pluginFrameRateMeter from "@litecanvas/plugin-frame-rate-meter"
 import { pluginAssetLoader } from "@litecanvas/plugin-asset-loader"
 import { Actor, vec, Camera, ANCHOR_CENTER } from "@litecanvas/utils"
