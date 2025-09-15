@@ -6,17 +6,16 @@ Basic template for [litecanvas](https://github.com/litecanvas/game-engine) games
 
 ## Install & Usage
 
-### Node/NPM
+### Using Node.js/NPM
 
 ```sh
-# Requires Node.js
 npx tiged litecanvas/template my-game
 cd my-game
 npm install
 npm run dev
 ```
 
-### Bun
+### Or using Bun
 
 ```sh
 bunx tiged litecanvas/template my-game
