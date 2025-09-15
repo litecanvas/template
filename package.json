@@ -4,14 +4,14 @@
   "description": "Basic template for litecanvas games",
   "type": "module",
   "scripts": {
-    "dev": "esbuild src/index.js --bundle --watch --outfile=public/build.js --servedir=public",
+    "dev": "esbuild src/index.js --bundle --sourcemap --watch --outfile=public/build.js --servedir=public",
     "build": "esbuild src/index.js --bundle --minify --drop-labels=DEV --outfile=public/build.js",
     "prepare": "npm run build",
     "format": "prettier -w src"
   },
   "license": "MIT",
   "devDependencies": {
-    "esbuild": "^0.25.5",
+    "esbuild": "^0.25.9",
     "prettier": "^3.6.2"
   },
   "dependencies": {

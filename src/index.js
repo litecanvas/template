@@ -9,10 +9,10 @@ DEV: onError((message) => {
   alert(`${message}. Open the browser console for more details.`)
 })
 
-let engine = litecanvas({
+const engine = litecanvas({
   width: 960,
   height: 720,
-  pixelart: true,
+  autoscale: false,
   loop: { init, update, draw, tapped },
 })
 
@@ -81,6 +81,6 @@ function draw() {
 
   // anything drawn outside of camera#start and camera#end will stay fixed
   // like game UI (score, lifes, buttons, etc)
-  textsize(20)
+  textsize(24)
   text(10, 10, "Tap to change the mage position or press arrow keys")
 }
