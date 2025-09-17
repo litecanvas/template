@@ -1,5 +1,5 @@
 /**
- * Handle any browser error. Useful while developing.
+ * Catch browser error. Useful while developing.
  *
  * @author Luiz Bills <luizbills@pm.me>
  * @licese MIT
