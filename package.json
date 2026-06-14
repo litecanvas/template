@@ -11,8 +11,8 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "esbuild": "^0.25.9",
-    "prettier": "^3.6.2"
+    "esbuild": "^0.28.1",
+    "prettier": "^3.8.4"
   },
   "dependencies": {
     "@litecanvas/plugin-asset-loader": "latest",
